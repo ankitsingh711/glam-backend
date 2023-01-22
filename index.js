@@ -6,14 +6,12 @@ const { UserRouter } = require("./router/user.router");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const {ProductRouter} = require("./router/products.router");
-const {Authenticator} = require("./middleware/userAuth.middleware");
-const {AdminRouter} = require("./router/admin.router");
+// const {Authenticator} = require("./middleware/userAuth.middleware");
 
 app.use(cors({origin:"*"}));
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.json());
 app.use("/users", UserRouter);
-app.use("/admin", AdminRouter);
 // app.use(Authenticator);
 app.use("/products", ProductRouter);
 
